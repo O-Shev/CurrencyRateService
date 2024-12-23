@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: currency-rate-service
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/currencydb
+    username: root
+    password: root
+
+  jpa:
+    database: postgresql
+    generate-ddl: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+          use_get_generated_keys: true
+
+currency-api:
+  base-url: http://localhost:8080
+  secret-key: secret-key
+
+server:
+  port: 8181
